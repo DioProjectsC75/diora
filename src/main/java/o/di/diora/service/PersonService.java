@@ -1,5 +1,6 @@
 package o.di.diora.service;
 
+import o.di.diora.dto.request.PersonDTO;
 import o.di.diora.dto.response.MessageResponseDTO;
 import o.di.diora.entity.Person;
 import o.di.diora.repository.PersonRepository;
@@ -15,8 +16,8 @@ public class PersonService {
         this.personRepository = personRepository;
     }
 
-    public MessageResponseDTO createPerson(Person person) {
-        Person savedPerson = personRepository.save(person);
+    public MessageResponseDTO createPerson(PersonDTO personDTO) {
+        Person savedPerson = personRepository.save(personDTO);
         return MessageResponseDTO
                 .builder()
                 .message("Created person with ID:" + savedPerson.getId())
