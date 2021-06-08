@@ -1,5 +1,6 @@
 package o.di.diora.controller;
 
+import lombok.AllArgsConstructor;
 import o.di.diora.dto.request.PersonDTO;
 import o.di.diora.dto.response.MessageResponseDTO;
 import o.di.diora.exception.PersonNotFoundException;
@@ -13,13 +14,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/diora")
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class PersonController {
     private PersonService personService;
-
-    @Autowired
-    public PersonController(PersonService personService) {
-        this.personService = personService;
-    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
