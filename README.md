@@ -34,6 +34,7 @@ External dependencies:
 | /api/v1/diora/{id}| DELETE    |delete a **person**    | n/a               | n/a               | 200/404       |
 
 ¹ - Expects a representation of the person in the body
+
 ² - Do not specify an ID in the request
 
 ### Database
