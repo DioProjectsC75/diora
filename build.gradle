@@ -33,9 +33,3 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
-
-jar {
-	manifest {
-		attributes 'Main-Class': 'o.di.diora.DioraApplication'
-	}
-}
