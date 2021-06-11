@@ -50,6 +50,7 @@ public class PersonServiceTest {
         PersonDTO expectedPersonDTO = createFakeDTO();
         Person expectedSavedPerson = createFakeEntity();
         expectedPersonDTO.setId(expectedSavedPerson.getId());
+        expectedPersonDTO.getPhones().get(0).setId(expectedSavedPerson.getPhones().get(0).getId());
 
         when(personRepository.findById(expectedSavedPerson.getId())).thenReturn(Optional.of(expectedSavedPerson));
         //when(personMapper.toDTO(expectedSavedPerson)).thenReturn(expectedPersonDTO);
@@ -74,6 +75,7 @@ public class PersonServiceTest {
     void testGivenNoDataThenReturnAllPeopleRegistered() {
         List<Person> expectedRegisteredPeople = Collections.singletonList(createFakeEntity());
         PersonDTO personDTO = createFakeDTO();
+        personDTO.setId(expectedRegisteredPeople.get(0).getId());
 
         when(personRepository.findAll()).thenReturn(expectedRegisteredPeople);
         //when(personMapper.toDTO(any(Person.class))).thenReturn(personDTO);
