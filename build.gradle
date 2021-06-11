@@ -34,6 +34,3 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
-
-task stage(dependsOn: ['bootJar', 'clean'])
-bootJar.mustRunAfter clean
